@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Muhamad Nauval Azhar">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="This is a login page template based on Bootstrap 5">
+    <title>Mentor Login</title>
+<!-- End layout styles -->
+    <link rel="shortcut icon" href="mec.jpg" />
+    <style>
+        .mec{
+            border-radius: 10px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                    <div class="text-center my-5">
+                        <img src="MEC-Logo.png" alt="logo" width="170">
+                    </div>
+                    
+                    <!-- Add select dropdown with Bootstrap design -->
+                    <div class="text-center mt-3">
+                        
+                    </div>
+                    
+                    <div class="card shadow-lg ">
+                        <div class="card-body p-5">
+                            <center>
+							
+                                <label for="login-type">Select Login Type:</label>
+                            </center>
+                            <br>
+                                <select id="login-type" class="form-select">
+                            
+                            <option value="student">Mentor Login</option>
+                            <option value="peer">Peer Login</option>
+                            <option value="student">Student Login</option>
+                            <option value="admin">Admin Login</option>
+                            <option value="ca">CA Login</option>
+                            <option value="hod">HOD Login</option>
+                            <option value="principal">Principal Login</option>
+                        
+                        </select>
+                        <br>
+                        <center>
+                            <!-- "Login" heading -->
+                            
+                            <h1 class="fs-4 card-title fw-bold mb-4">Mentor Login</h1>
+                        </center>
+                            <form method="POST" class="needs-validation" action="mentor_login.php">
+                                <div class="mb-3">
+                                    <label class="mb-2 text-muted" for="email">Username : </label>
+                                    <input id="email" type="name" placeholder="Enter your Username" class="form-control" name="email" value="" required autofocus>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="mb-2 w-100">
+                                        <label class="text-muted" for="password">Password : </label>
+                                        
+                                    </div>
+                                    <input id="password" placeholder="Enter your Password" type="password" class="form-control" name="password" required>
+                
+                                </div>
+                                <br>
+           <center> 
+                                    <button type="submit" class="btn btn-primary">
+                                        Login
+                                    </button>
+                                </center>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="text-center mt-5 text-muted">
+                        Copyright &copy; 2023 &mdash; mec.edu.in
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Event listener for the login type dropdown
+            const loginTypeSelect = document.getElementById("login-type");
+
+            loginTypeSelect.addEventListener("change", function () {
+                const selectedOption = loginTypeSelect.value;
+                // Redirect to the appropriate login page based on the selected option
+                switch (selectedOption) {
+                    case "student":
+                        window.location.href = "studentlogin.php";
+                        break;
+                    case "admin":
+                        window.location.href = "admin_login.php";
+                        break;
+                    case "peer":
+                        window.location.href = "peer_login.html";
+                        break;
+                    case "ca":
+                        window.location.href = "class_advisor_login.php";
+                        break;
+                    case "hod":
+                        window.location.href = "hod_login.html";
+                        break;
+                    case "principal":
+                        window.location.href = "principal_login.php";
+                        break;    
+                    default:
+                        // Handle the default case or add additional login types as needed
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
